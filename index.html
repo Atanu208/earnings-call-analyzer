@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earnings Call Analyzer — AI-Powered Concall Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- META STRIP -->
+<div class="meta-strip">
+  <span class="meta-strip-left">Earnings Call Analyzer</span>
+  <span class="meta-strip-right" id="topbarCompany">AI-Powered Concall Intelligence &middot; SWOT &middot; MOAT &middot; Tailwinds &middot; Headwinds</span>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="brand">
+    <div class="brand-logo">EC</div>
+    <div class="brand-info">
+      <h1>Earnings Call Analyzer</h1>
+      <p>AI-Powered Concall Intelligence &nbsp;&middot;&nbsp; SWOT &middot; MOAT &middot; Tailwinds &middot; Headwinds</p>
+    </div>
+  </div>
+  <div class="header-meta">
+    <strong id="headerCompany">Universal Transcript Analyzer</strong>
+    Works for any listed company globally<br>
+    Generated: <span id="genDate"></span>
+    <br><span class="pill">&#10003; Powered by Groq &mdash; Free</span>
+  </div>
+</header>
+
+<!-- MAIN LAYOUT -->
+<div class="layout">
+  <div class="content">
+
+    <!-- TRANSCRIPT INPUT -->
+    <div class="input-card">
+      <div class="label">Earnings Call Transcript</div>
+      <textarea id="transcriptInput"
+        placeholder="Paste any company's earnings call transcript here&#10;&#10;Works with any listed company globally — Indian, US, or global exchanges.&#10;Click 'Load OLAELEC Sample' to try a demo."></textarea>
+      <div class="btn-row">
+        <button class="btn-primary" id="analyzeBtn" onclick="App.runAnalysis()">
+          &#9658;&nbsp; Analyze Transcript
+        </button>
+        <button class="btn-ghost" onclick="App.prefillSample()">
+          &#8595;&nbsp; Load OLAELEC Sample
+        </button>
+      </div>
+    </div>
+
+    <!-- LOADING -->
+    <div class="loading-state" id="loadingState">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Analyzing Earnings Transcript&hellip;</div>
+      <div class="loading-step" id="loadingStep">Extracting financial intelligence&hellip;</div>
+    </div>
+
+    <!-- ERROR -->
+    <div class="error-state" id="errorState">
+      <div class="error-icon">&#9888;</div>
+      <div>
+        <div class="error-msg"  id="errorMsg"></div>
+        <div class="error-hint" id="errorHint"></div>
+      </div>
+    </div>
+
+    <!-- EMPTY STATE -->
+    <div class="empty-state" id="emptyResults">
+      <span class="empty-icon">&#128196;</span>
+      <p>Paste any earnings call transcript above and click <strong>Analyze</strong> to generate a structured intelligence report.</p>
+    </div>
+
+    <!-- RESULTS -->
+    <div id="resultsContainer"></div>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <!-- Company Profile -->
+    <div class="sidebar-card">
+      <div class="ticker-badge" id="tickerBadge">CONCALL</div>
+      <div class="label">Company Profile</div>
+      <div id="companyProfile">
+        <div class="meta-row"><span class="meta-key">STATUS</span><span class="meta-val">Awaiting Analysis</span></div>
+        <div class="meta-row"><span class="meta-key">AI MODEL</span><span class="meta-val">LLaMA 3.3 70B</span></div>
+        <div class="meta-row"><span class="meta-key">PROVIDER</span><span class="meta-val">Groq</span></div>
+        <div class="meta-row"><span class="meta-key">COST</span><span class="meta-val positive">Free</span></div>
+      </div>
+    </div>
+
+    <!-- Analyst Verdict (shown after analysis) -->
+    <div class="sidebar-card" id="verdictCard" style="display:none;">
+      <div class="label">Analyst Verdict</div>
+      <div class="verdict-wrap">
+        <div class="verdict-eyebrow">Overall Assessment</div>
+        <div class="verdict-text" id="verdictText">—</div>
+        <div class="verdict-note" id="verdictNote">—</div>
+      </div>
+    </div>
+
+    <!-- How To Use -->
+    <div class="sidebar-card">
+      <div class="label">How To Use</div>
+      <p style="font-size:0.78rem; color:var(--ink-3); line-height:1.75;">
+        1. Run the server: <code style="font-family:'DM Mono',monospace; font-size:0.72rem; background:var(--bg); padding:0.1rem 0.35rem; border-radius:3px;">npm start</code><br>
+        2. Paste any earnings call transcript<br>
+        3. Click <strong>Analyze Transcript</strong>
+      </p>
+      <p style="font-size:0.7rem; color:var(--ink-4); margin-top:0.9rem; line-height:1.6;">
+        Your Groq API key lives in <code style="font-family:'DM Mono',monospace; font-size:0.68rem;">.env</code> on the server — it never reaches the browser.
+      </p>
+      <p style="font-size:0.68rem; color:var(--ink-4); margin-top:0.6rem; font-style:italic;">
+        &#9888; Research purposes only. Not investment advice.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  EARNINGS CALL ANALYZER &copy; 2025 &nbsp;&middot;&nbsp;
+  Powered by <a href="https://groq.com" target="_blank" rel="noopener">Groq AI</a> (Free)
+  &nbsp;&middot;&nbsp; Not Financial Advice
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/renderer.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
