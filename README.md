@@ -1,5 +1,3 @@
-
-````md
 # AI Earnings Call Analyzer
 
 Analyze earnings call transcripts using AI-powered insights such as:
@@ -11,15 +9,12 @@ Analyze earnings call transcripts using AI-powered insights such as:
 - Claude API Integration
 - OLAELEC Sample Included
 
----
 
 ## 🚀 To Run
 
 ### 1. Install dependencies (one time)
 
-```bash
 npm install
-````
 
 ### 2. Create your `.env` file in the root folder
 
@@ -50,7 +45,6 @@ http://localhost:3000
 
 ## 📌 Notes
 
-* Keep your API key private
 * Make sure `.env` is in the root folder
 * Default port is `3000`
 
