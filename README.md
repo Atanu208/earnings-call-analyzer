@@ -1,3 +1,4 @@
+---
 # AI Earnings Call Analyzer
 
 Analyze earnings call transcripts using AI-powered insights such as:
@@ -6,7 +7,6 @@ Analyze earnings call transcripts using AI-powered insights such as:
 - Moat Detection
 - Tailwinds
 - Headwinds
-- Claude API Integration
 - OLAELEC Sample Included
 
 
