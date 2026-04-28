@@ -1,4 +1,4 @@
----
+
 # AI Earnings Call Analyzer
 
 Analyze earnings call transcripts using AI-powered insights such as:
